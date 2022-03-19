@@ -25,6 +25,11 @@ class customer
 			this->name = new  char[strlen(name)+1];
 			strcpy(this->name,name);
 		}
+		customer(const customer &copy)	:account(copy.account),money(copy.money)
+		{
+			this->name=new char[strlen(copy.name)+1];
+			strcpy(this->name,copy.name);
+		}
 		~customer()
 		{
 			delete []name;
